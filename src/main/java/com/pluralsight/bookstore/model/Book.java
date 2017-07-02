@@ -1,6 +1,6 @@
 package com.pluralsight.bookstore.model;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -8,11 +8,17 @@ import java.util.Date;
  */
 @Entity
 public class Book {
+    @Id @GeneratedValue
     private Long id;
+    @Column(length = 200)
     private String title;
+    @Column(length = 1000)
     private String description;
+    @Column(name = "unit_cost")
     private Float unitCost;
     private String isbn;
+    @Column(name = "publication_date")
+    @Temporal(TemporalType.DATE)
     private Date publicationDate;
     private Integer nbOfPages;
     private String imgUrl;
