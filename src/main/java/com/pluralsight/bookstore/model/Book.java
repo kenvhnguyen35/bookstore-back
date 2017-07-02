@@ -20,7 +20,9 @@ public class Book {
     @Column(name = "publication_date")
     @Temporal(TemporalType.DATE)
     private Date publicationDate;
+    @Column(name = "nb_of_pages")
     private Integer nbOfPages;
+    @Column(name = "image_url")
     private String imgUrl;
     private Language language;
 
