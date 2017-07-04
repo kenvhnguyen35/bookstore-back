@@ -25,6 +25,26 @@ public class BookRepositoryTest {
     @Inject
     private BookRepository bookRepository;
 
+    @Test(expected = Exception.class)
+    public void findWithNullId() {
+        bookRepository.find(null);
+    }
+
+    @Test(expected = Exception.class)
+    public void createInvalidBook() {
+        Book newBook = new Book(null,
+                "Good Java book",
+                45F,
+                "someISBN",
+                new Date(),
+                445,
+                "https://www.pearsonhighered.com/assets/bigcovers/0/2/0/1/0201310058.jpg",
+                Language.ENGLISH
+        );
+
+        Book b = bookRepository.create(newBook);
+    }
+
     @Test
     public void create() throws Exception {
 
