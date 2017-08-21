@@ -47,6 +47,9 @@ public class Book {
     @Enumerated
     private Language language;
 
+    public Book() {
+    }
+
     public Book(String title, String description, Float unitCost, String isbn, Date publicationDate, Integer nbOfPages, String imgUrl, Language language) {
         this.title = title;
         this.description = description;
